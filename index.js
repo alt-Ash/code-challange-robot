@@ -1,14 +1,16 @@
 console.log('Hello World');
 
-const readline = require('readline')
-const input = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
+const prompt = require('prompt');
 
-input.question("How many bots would you like to simulate ? ", function (numberOfBots) {
-    input.question("Please specify the bots Coordinates ? ", function (coordinates){
-       console.log(`${numberOfBots} robot will move to ${coordinates}`)
-        input.close();
-    });
+prompt.start();
+
+prompt.get(['coordinate'], function (err, result) {
+    if (err) { return onErr(err); }
+    console.log('Command-line input received:');
+    console.log(' Coordinates: ' + result.coordinate);
 });
+
+function onErr(err) {
+    console.log(err);
+    return 1;
+}
