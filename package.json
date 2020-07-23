@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "Ashleigh Dorrian",
   "license": "ISC",
   "dependencies": {
     "prompt": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0"
   }
 }
