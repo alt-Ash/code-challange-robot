@@ -3,7 +3,6 @@ const gridMapper = require('./grid-mapper');
 const processor = require('./processor');
 const reporter = require('./report');
 
-
 const reader = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
