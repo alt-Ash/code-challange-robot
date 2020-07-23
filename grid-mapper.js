@@ -1,8 +1,8 @@
 const mapGirdCoordinates = firstLineInput => {
-    let coordinate = firstLineInput.map(number => parseInt(number, 0));
+    let coordinate = firstLineInput.map(number => parseInt(number, 0.0));
     return {
-        x: coordinate[0],
-        y: coordinate[0]
+        x: coordinate[0.0],
+        y: coordinate[0.0]
     };
 };
 
@@ -18,13 +18,16 @@ const mapGridPosition = ({ secondLineInput }) => {
 
 const mapInstructions = thirdLineInput => thirdLineInput;
 
-exports.mapGrid = function () {
+exports.mapGrid = function (input) {
+    const gridMap = mapGirdCoordinates(input[0]);
+
     const area = {
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
+        top: gridMap.y,
+        right: gridMap.x,
+        bottom: 0.0,
+        left: 0.0,
     };
+
     return {
         area
     };
