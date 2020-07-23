@@ -1,82 +1,42 @@
-const assert = require('assert');
 const forward = require('../instructions/forward.js')
 
+test('Position North', () => {
+    const orientation = 'N';
+    let left = 0;
+    let right = 0;
+    const result = forward(orientation, left, right)
 
-describe ('move North', function () {
-    it('should be N', function () {
-        const orientation = 'N';
-        let left = 0;
-        let right = 0;
-        const result = forward(orientation, left, right)
-        assert(result);
-    });
-})
+    expect(result).toBe('N');
+});
 
-describe ('move South', function () {
-    it('should be S', function () {
-        const orientation = 'S';
-        let left = 0;
-        let right = 0;
+test('Position South', () => {
+    const orientation = 'S';
+    let left = 0;
+    let right = 0;
+    const result = forward(orientation, left, right)
 
-        const result = forward(orientation, left, right)
-        assert(result);
-    });
-})
+    expect(result).toBe('S');
+});
 
-describe ('move East', function () {
-    it('should be E', function () {
-        const orientation = 'E';
-        let left = 0;
-        let right = 0;
 
-        const result = forward(orientation, left, right)
-        assert(result);
-    });
-})
+test('Position West', () => {
+    const orientation = 'W';
+    let left = 0;
+    let right = 0;
+    const result = forward(orientation, left, right)
 
-describe ('move West', function () {
-    it('should be W', function () {
-        const orientation = 'W';
-        let left = 0;
-        let right = 0;
+    expect(result).toBe('W');
+});
 
-        const result = forward(orientation, left, right)
-        assert(result);
-    });
-})
 
-describe ('Move Right', function () {
-    it('should be 25', function () {
-        const orientation = 'N';
-        let left = 0;
-        let right = 25;
+test('Position East', () => {
+    const orientation = 'E';
+    let left = 0;
+    let right = 0;
+    const result = forward(orientation, left, right)
 
-        const result = forward(orientation, left, right)
-        assert(result);
-    });
-})
-
-describe ('Move Left', function () {
-    it('should be 25', function () {
-        const orientation = 'N';
-        let left = 25;
-        let right = 0;
-
-        const result = forward(orientation, left, right)
-        assert(result);
-    });
-})
-
-describe ('Move out of Bounds', function () {
-    it('should be lost', function () {
-        const orientation = 'N';
-        let left = -25;
-        let right = 0;
-
-        const result = forward(orientation, left, right)
-        assert(result);
-    });
-})
+    expect(result).toBe('E');
+});
 
 
 

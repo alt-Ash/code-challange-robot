@@ -31,3 +31,7 @@ function processString (input) {
     state = processor.process(state);
     return reporter.report(state);
 }
+
+exports.process = function (input) {
+    processString(input)
+}
