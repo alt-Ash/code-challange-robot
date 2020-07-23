@@ -1,5 +1,5 @@
 const assert = require('assert');
-const forward = require('../forward.js')
+const forward = require('../instructions/forward.js')
 
 
 describe ('move North', function () {

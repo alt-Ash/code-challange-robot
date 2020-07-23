@@ -1,7 +1,7 @@
 const commands = {
-    'L': require('./left'),
-    'R': require('./right'),
-    'F': require('./forward')
+    'L': require('../instructions/left'),
+    'R': require('../instructions/right'),
+    'F': require('../instructions/forward')
 };
 
 exports.process = function (state) {
