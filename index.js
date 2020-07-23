@@ -16,4 +16,3 @@ reader.on('line', function (userInput) {
 reader.on('close', function (input) {
     console.log(input);
 });
-
