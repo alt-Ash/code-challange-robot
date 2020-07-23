@@ -7,8 +7,13 @@ const reader = readline.createInterface({
 });
 
 const input = [];
-reader.question('type something here\n', function (userInput) {
+reader.on('line', function (userInput) {
+    userInput = userInput.trim();
         input.push(userInput);
+        reader.close();
 });
 
+reader.on('close', function (input) {
+    console.log(input);
+});
 
