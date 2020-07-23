@@ -7,16 +7,16 @@
 
 function move(position) {
     if (position.orientation === 'N') {
-        return {...position, "y": position.y + 1};
+        return {...position, y: position.y + 1};
     }
     if (position.orientation === 'E') {
-        return {...position, "x": position.x + 1};
+        return {...position, x: position.x + 1};
     }
     if (position.orientation === 'S') {
-        return {...position, "y": position.y - 1};
+        return {...position, y: position.y - 1};
     }
     if (position.orientation === 'W') {
-        return {...position, "x": position.x - 1};
+        return {...position, x: position.x - 1};
     }
     return position;
 }
