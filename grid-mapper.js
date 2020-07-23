@@ -35,7 +35,16 @@ exports.mapGrid = function (input) {
         left: 0.0,
     };
 
+    const robots = [];
+    for (let i = 1; i < input.length; i += 2) {
+        robots.push({
+            position: mapGridPosition(input[i]),
+            instructions: mapInstructions(input[i + 1])
+        });
+    }
+
     return {
-        area
+        area,
+        robots
     };
 };
