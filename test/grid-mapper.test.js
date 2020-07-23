@@ -1,14 +1,12 @@
 const assert = require('assert');
 const gridMapper = require('../grid-mapper.js')
 
-
-console.log(gridMapper.mapGrid("50 20"))
-describe ('when second value is 20', function () {
-    it('top should equal 20', function () {
-        result = gridMapper.mapGrid("20").area.top;
-        console.log(result)
+describe('expect top and right axis to be equal to input', function () {
+    it('should be { top: 50, right: 20, bottom: 0, left: 0 }', function () {
+        const expected = { top: 50, right: 20, bottom: 0, left: 0 }
+        let result = gridMapper.mapGrid("20 50 30 401").area;
         assert(result);
     });
-})
+});
 
 

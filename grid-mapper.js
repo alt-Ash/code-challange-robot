@@ -1,11 +1,12 @@
 function mapGirdCoordinates (firstLineInput) {
     const coordinate = firstLineInput
         .trim()
-        .split('')
+        .split(' ')
         .map(number => parseInt(number, 10));
+
     return {
         x: coordinate[0],
-        y: coordinate[0]
+        y: coordinate[1]
     };
 }
 
@@ -19,12 +20,14 @@ function mapGridPosition(secondLineInput){
         y: parseInt(position[1], 10),
         orientation: position[2]
     };
-};
+}
 
 const mapInstructions = thirdLineInput => thirdLineInput;
 
 exports.mapGrid = function (input) {
-    const gridMap = mapGirdCoordinates(input[0]);
+    let grid = input.split('\n');
+
+    const gridMap = mapGirdCoordinates(grid[0]);
     const area = {
         top: gridMap.y,
         right: gridMap.x,
