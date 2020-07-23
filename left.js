@@ -7,7 +7,7 @@ const nextOrientations = {
 
 module.exports = function (position) {
     return {
-        position,
+        ...position,
         orientation: nextOrientations[position.orientation]
     };
 };

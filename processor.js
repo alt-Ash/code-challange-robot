@@ -21,4 +21,3 @@ exports.process = function (state) {
 
     return state;
 };
-

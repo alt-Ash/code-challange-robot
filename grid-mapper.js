@@ -1,6 +1,5 @@
-function mapGirdCoordinates (firstLineInput) {
-    const coordinate = firstLineInput
-        .trim()
+function mapGirdCoordinates(firstLineInput) {
+    const coordinate = firstLineInput.trim()
         .split(' ')
         .map(number => parseInt(number, 10));
 
@@ -10,10 +9,8 @@ function mapGirdCoordinates (firstLineInput) {
     };
 }
 
-function mapGridPosition(secondLineInput){
-    const position = secondLineInput
-        .trim()
-        .split(' ');
+function mapGridPosition(secondLineInput) {
+    const position = secondLineInput.trim().split(' ');
 
     return {
         x: parseInt(position[0], 10),
@@ -22,24 +19,26 @@ function mapGridPosition(secondLineInput){
     };
 }
 
-const mapInstructions = thirdLineInput => thirdLineInput;
+function mapInstructions(thirdLineInput) {
+    return thirdLineInput.trim().split('');
+}
 
 exports.mapGrid = function (input) {
-    let grid = input.split('\n');
+    const grid = input.split('\n');
 
     const gridMap = mapGirdCoordinates(grid[0]);
     const area = {
         top: gridMap.y,
         right: gridMap.x,
-        bottom: 0.0,
-        left: 0.0,
+        bottom: 0,
+        left: 0
     };
 
     const robots = [];
-    for (let i = 1; i < input.length; i += 2) {
+    for (let i = 1; i < grid.length; i += 2) {
         robots.push({
-            position: mapGridPosition(input[i]),
-            instructions: mapInstructions(input[i + 1])
+            position: mapGridPosition(grid[i]),
+            instructions: mapInstructions(grid[i + 1])
         });
     }
 
