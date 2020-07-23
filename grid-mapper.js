@@ -15,3 +15,8 @@ const mapGridPosition = ({ secondLineInput }) => {
         orientation: position[2]
     };
 };
+
+function mapInstructions(thirdLineInput) {
+    return thirdLineInput;
+}
+
