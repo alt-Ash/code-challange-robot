@@ -16,7 +16,16 @@ const mapGridPosition = ({ secondLineInput }) => {
     };
 };
 
-function mapInstructions(thirdLineInput) {
-    return thirdLineInput;
-}
+const mapInstructions = thirdLineInput => thirdLineInput;
 
+exports.mapGrid = function () {
+    const area = {
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+    };
+    return {
+        area
+    };
+};
