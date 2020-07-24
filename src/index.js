@@ -3,13 +3,13 @@ const gridMapper = require('./grid-mapper');
 const processor = require('./processor');
 const reporter = require('./report');
 
+const guideRobot = [];
+
 const reader = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
     terminal: false
 });
-
-const guideRobot = [];
 
 reader.on('line', function (input) {
     input = input.trim();
@@ -21,16 +21,22 @@ reader.on('line', function (input) {
 });
 
 reader.on('close', function () {
-    const output = processString(guideRobot.join('\n'));
-    console.log(output);
+    console.log(processString(guideRobot.join('\n')));
 });
 
-function processString (input) {
-    let state = gridMapper.mapGrid(input);
-    state = processor.process(state);
+function processString(input) {
+    const state = processor.process(gridMapper.mapGrid(input));
+
     return reporter.report(state);
 }
 
-exports.process = function (input) {
-    processString(input)
+function saveReport(result) {
+    const fs = require('fs');
+
+    fs.writeFile("test-files/output/report-result", result, function(err) {
+        if(err) {
+            return console.log(err);
+        }
+        console.log("The file was saved!");
+    });
 }
