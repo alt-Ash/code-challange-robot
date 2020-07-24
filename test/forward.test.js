@@ -1,4 +1,4 @@
-const forward = require('../instructions/forward.js')
+const forward = require('../src/instructions/forward.js')
 
 test('Position North', () => {
     const orientation = 'N';
