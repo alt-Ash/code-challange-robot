@@ -41,8 +41,3 @@ test('When orientation input is E expect Position East', () => {
 
     expect(result).toBe('E');
 });
-
-
-
-
-

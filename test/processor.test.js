@@ -80,7 +80,3 @@ test('Robot can move right to a new position', () => {
 
     expect(newPosition ).not.toEqual( startingPosition);
 });
-
-
-
-

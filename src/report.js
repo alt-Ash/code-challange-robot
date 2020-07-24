@@ -5,4 +5,3 @@ exports.report = function (state) {
             return `${ pos.x } ${ pos.y } ${ pos.orientation }${ pos.lost ? ' LOST' : '' }`;
         }).join('\n');
 };
-

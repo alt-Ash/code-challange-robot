@@ -24,5 +24,3 @@ test('test robot bottom grid position is not impacted by input', () => {
     let result = gridMapper.mapGrid("500 50").area.bottom;
     expect(result).toBe(0);
 });
-
-

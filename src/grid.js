@@ -1,5 +1,5 @@
-exports.mapGirdCoordinates = function(firstLineInput) {
-    const coordinate = firstLineInput.trim()
+exports.mapGirdCoordinates = function(input) {
+    const coordinate = input.trim()
         .split(' ')
         .map(number => parseInt(number, 10));
 

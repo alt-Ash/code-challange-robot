@@ -4,8 +4,8 @@
  *  Robot should report position
  */
 
-exports.mapGridPosition = function (secondLineInput) {
-    const position = secondLineInput.trim().split(' ');
+exports.mapGridPosition = function (input) {
+    const position = input.trim().split(' ');
 
     return {
         x: parseInt(position[0], 10),
@@ -14,6 +14,6 @@ exports.mapGridPosition = function (secondLineInput) {
     };
 }
 
-exports.mapInstructions = function(thirdLineInput) {
-    return thirdLineInput.trim().split('');
+exports.mapInstructions = function(input) {
+    return input.trim().split('');
 }
