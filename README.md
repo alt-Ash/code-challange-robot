@@ -4,7 +4,7 @@
 
 ## References
 
-Some other projects solving the same issue were used in referecne to help with the development of this project links to the GitHub reposiroties care here:
+Some other projects solving the same issue were used in referecne to help with the development of this project links to the GitHub reposiroties are here:
 ```
 
 https://github.com/frigus02/coding-challenge-martian-robots
