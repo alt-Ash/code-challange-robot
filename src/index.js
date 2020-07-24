@@ -25,12 +25,8 @@ reader.on('close', function () {
     console.log(output);
 });
 
-function processString (input) {
-    let state = gridMapper.mapGrid(input);
-    state = processor.process(state);
-    return reporter.report(state);
-}
+exports.processString = function (input) {
+    const state = processor.process(gridMapper.mapGrid(input));
 
-exports.process = function (input) {
-    processString(input)
+    return reporter.report(state);
 }

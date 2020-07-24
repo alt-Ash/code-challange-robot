@@ -1,8 +1,8 @@
 const processor = require('../src/processor')
 const gridMapper = require('../src/grid-mapper.js');
-const input = '5 3\n 1 1 E\n RFRFRFRF\n 3 2 N\n FRRFLLFFRRFLL\n 0 3 W\n LLFFFLFLFL'
 
 test('Process moves', () => {
+    const input = '5 3\n 1 1 E\n RFRFRFRF\n 3 2 N\n FRRFLLFFRRFLL\n 0 3 W\n LLFFFLFLFL'
     const state = gridMapper.mapGrid(input)
 
     const result = processor.process(state)
@@ -10,15 +10,43 @@ test('Process moves', () => {
 });
 
 test('Robot get instructions', () => {
+    const input = '5 3\n 1 1 E\n RFRFRFRF\n 3 2 N\n FRRFLLFFRRFLL\n 0 3 W\n LLFFFLFLFL'
+
     const state = gridMapper.mapGrid(input)
 
     const result = processor.process(state)
     expect(result.robots[1]).toStrictEqual({position: { x: 3, y: 3, orientation: 'N', lost: true }, instructions: ['F', 'R', 'R', 'F','L', 'L', 'F', 'F','R', 'R', 'F', 'L','L']} );
 });
 
-test('Robot can return Lost as true', () => {
-    const state = gridMapper.mapGrid(input)
+test('Robot is Lost', () => {
+    const input = '5 3\n 1 1 E\n RFRFRFRF\n 3 2 N\n FRRFLLFFRRFLL\n 0 3 W\n LLFFFLFLFL'
 
-    const result = processor.process(state)
-    expect(result.robots[1]).toContainEqual.toString('"lost": true');
+    const state = gridMapper.mapGrid(input)
+    const process = processor.process(state)
+    const result = process.robots[1].position.lost
+
+    expect(result).toBe( true);
 });
+
+test('Robot is can turn Right', () => {
+    const input = '5 3\n 1 1 E\n R'
+
+    const state = gridMapper.mapGrid(input)
+    const process = processor.process(state)
+    const result = process.robots[0].position.orientation
+
+    expect(result).toBe( 'S');
+});
+
+test('Robot is can turn Left', () => {
+    const input = '5 3\n 1 1 S\n L'
+
+    const state = gridMapper.mapGrid(input)
+    const process = processor.process(state)
+    const result = process.robots[0].position.orientation
+
+    expect(result).toBe( 'E');
+});
+
+
+
